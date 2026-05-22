@@ -1,0 +1,16 @@
+# Obsidian設定（端末ごとに異なるので除外推奨）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# キャッシュ
+.obsidian/cache
+
+# プラグインのデータ（任意）
+# .obsidian/plugins/
+
+# OS系
+.DS_Store
+Thumbs.db
+
+# バックアップ
+*.bak
