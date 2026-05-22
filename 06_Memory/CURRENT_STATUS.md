@@ -22,6 +22,9 @@
 - 2026-05-22：Linuxサーバー（nas001）clone・MCP設定・自動pull完了
 - 2026-05-22：Android携帯はGitHubブラウザで読み取り運用に決定
 - 2026-05-22：本日の全作業を `04_Logs/Daily/2026-05-22.md` に記録完了
+- 2026-05-22：obsidian-git自動コミット設定を修正（interval 10分 + 編集停止後コミットON）
+- 2026-05-22：Filesystem MCPを追加（obsidian-mcpのedit-noteタイムアウト問題の対策）
+- 2026-05-22：各端末の権限を確定（Windows：読み書きpush / Linux：読み書きのみ / Android：読み取りのみ）
 
 ## 🧩 今抱えている課題・迷っていること
 
