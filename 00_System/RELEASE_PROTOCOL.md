@@ -1,180 +1,114 @@
 # RELEASE PROTOCOL（リリース手順）
-> ogawaが「リリースして」と言ったら、Claudeはこのファイルを読んでそのまま実行する。
+> ogawaが「リリースして」または「更新して」と言ったら、Claudeはこのファイルを読んでそのまま実行する。
+> **Claudeがコマンドをすべて出し、ogawaはターミナルにコピペするだけ。**
 
 ---
 
-## 🚀 リリース実行手順
+## ⚙️ 固定設定（全アプリ共通）
 
-### 事前確認（Claudeが確認すること）
-1. アプリ名・リポジトリ名を確認
-2. `02_Projects/該当アプリ/` のノートを読んで構成を把握
-3. ローカルのHTMLファイルパスを確認
+| 項目 | 値 |
+|---|---|
+| 開発フォルダ | `C:\自作ツール\apl\アプリ名\` |
+| GitHubユーザー | tubakuro-sys |
+| サーバー | nas001（Ubuntu / 192.168.11.50） |
+| SSHユーザー | manager |
+| サーバーデプロイ先 | `/var/www/アプリ名/` |
+| SSH鍵 | `/home/manager/.ssh/id_ed25519` |
 
 ---
 
-### Step A：GitHubリポジトリ作成（初回のみ）
+## 🛠 リリーススクリプト（バッチファイル）
 
-ogawaにやってもらう：
+ダブルクリックだけでリリースできるスクリプトを用意済み。
+
+| ファイル | 置き場所 | 用途 |
+|---|---|---|
+| `new_app.bat` | `C:\自作ツール\apl\` | 新規アプリの初期化・初回push |
+| `release.bat` | 各アプリフォルダ内 | 更新のpush（コミットメッセージ入力するだけ） |
+
+---
+
+## 🆕 新規リリース手順（Claudeが順番に進める）
+
+### Step 1：Claudeが確認すること
+- アプリ名・ファイル名
+- サーバーサイド機能が必要か（localStorageのみ → GitHub Pages、サーバー必要 → Cloudflare Tunnel）
+- `C:\自作ツール\apl\アプリ名\` にファイルが存在するか
+
+### Step 2：GitHubリポジトリ作成（ogawaが実施）
+Claudeが以下を指示する：
 1. https://github.com/new を開く
-2. Repository name: `アプリ名`（例: calorie_app）
-3. Public または Private を選択
-4. **README・.gitignore・licenseは追加しない**（空リポジトリにする）
+2. Repository name: `アプリ名`
+3. Public を選択
+4. **README・.gitignore・licenseは追加しない**（空リポジトリ）
 5. 「Create repository」をクリック
-6. 表示されたリポジトリURLをClaudeに伝える
+6. リポジトリURLをClaudeに伝える
 
----
+### Step 3：new_app.bat を実行（ogawaが実施）
+`C:\自作ツール\apl\new_app.bat` をダブルクリック → アプリ名を入力するだけ。
+（git init・deploy.yml生成・初回pushまで自動）
 
-### Step B：ローカルGit初期化 〜 初回push（初回のみ）
+### Step 4：GitHub Pages公開（localStorageアプリのみ・ogawaが実施）
+Claudeが以下を指示する：
+1. `https://github.com/tubakuro-sys/アプリ名/settings/pages` を開く
+2. Source: `Deploy from a branch`
+3. Branch: `main` / `/ (root)` → Save
 
-Claudeがコマンドを出す。ogawaがターミナルで実行：
-
+### Step 5：Linuxサーバー設定（Claudeがコマンドを出す）
+ogawaがSSHで接続して実行：
 ```bash
-# アプリフォルダへ移動
-cd アプリのフォルダパス
-
-# Git初期化
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ユーザー名/アプリ名.git
-git push -u origin main
-```
-
----
-
-### Step C：Linuxサーバー初期設定（初回のみ）
-
-Claudeがコマンドを出す。ogawaがサーバーのターミナルで実行：
-
-```bash
-# デプロイ先ディレクトリ作成
 sudo mkdir -p /var/www/アプリ名
 sudo chown $USER:$USER /var/www/アプリ名
-
-# GitHubからクローン
-git clone https://github.com/ユーザー名/アプリ名.git /var/www/アプリ名
-
-# nginx設定
+git clone https://github.com/tubakuro-sys/アプリ名.git /var/www/アプリ名
 sudo nano /etc/nginx/sites-available/アプリ名
 ```
-
-nginx設定内容（Claudeが環境に合わせて出す）：
+nginx設定内容（Claudeがファイル名に合わせて出す）：
 ```nginx
 server {
     listen 80;
     server_name _;
     root /var/www/アプリ名;
-    index index.html;
+    index ファイル名.html;
     location / {
-        try_files $uri $uri/ /index.html;
+        try_files $uri $uri/ /ファイル名.html;
     }
 }
 ```
-
 ```bash
 sudo ln -s /etc/nginx/sites-available/アプリ名 /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
----
+### Step 6：動作確認（Claudeが確認URLを案内）
+- GitHub Pages URL: `https://tubakuro-sys.github.io/アプリ名/ファイル名.html`
+- ローカルネットワーク: `http://192.168.11.50`
 
-### Step D：GitHub Actions設定（初回のみ）
-
-#### deploy.yml作成
-`.github/workflows/deploy.yml` をClaudeが生成。内容：
-
-```yaml
-name: Deploy to Home Server
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_KEY }}
-          script: |
-            cd /var/www/アプリ名
-            git pull origin main
-```
-
-#### GitHub Secrets登録
-ogawaがGitHubで登録：
-`リポジトリ → Settings → Secrets and variables → Actions → New repository secret`
-
-| シークレット名 | 値 |
-|---|---|
-| SERVER_HOST | 自宅サーバーのIPアドレス（192.168.11.50） |
-| SERVER_USER | SSHユーザー名（manager） |
-| SERVER_KEY | SSH秘密鍵（~/.ssh/id_ed25519の内容） |
-
-> ⚠️ SERVER_HOSTとSERVER_USERは全アプリ共通。SERVER_KEYも同じ鍵を使い回しOK。
-> ⚠️ GitHub ActionsはローカルIPに直接SSH接続できないためCloudflare Tunnel設定が必要（課題）
+### Step 7：Obsidian記録（Claudeが実施）
+- `RELEASE_PROTOCOL.md` のアプリ別リリース状況テーブルを更新
+- `CURRENT_STATUS.md` の進行中プロジェクト・決定事項を更新
 
 ---
 
-### Step E：GitHub Pages公開（localStorage完結アプリの場合）
+## 🔄 更新手順
 
-サーバーサイド不要なアプリはこちらが簡単・無料・即時公開可能。
-
-1. `リポジトリ → Settings → Pages`
-2. Source: `Deploy from a branch`
-3. Branch: `main` / `/ (root)` → Save
-4. 公開URL: `https://tubakuro-sys.github.io/アプリ名/ファイル名.html`
+`C:\自作ツール\apl\アプリ名\release.bat` をダブルクリック → コミットメッセージを入力するだけ。
 
 ---
 
-### Step F：2回目以降のリリース（更新）
+## ⚠️ 未解決課題
 
-```bash
-# ローカルで変更後
-git add .
-git commit -m "更新内容"
-git push origin main
-# → GitHub Pagesが自動で反映（数分後）
-```
-
----
-
-### Step G：Cloudflare Tunnel（外部公開・課題）
-
-> ⚠️ 現在未対応。サーバーサイド機能が必要なアプリのリリース時に対応予定。
-> ドメイン取得・Cloudflareアカウント作成が必要。
-
-```bash
-cloudflared tunnel login
-cloudflared tunnel create アプリ名
-cloudflared tunnel route dns アプリ名 アプリ名.ドメイン.com
-sudo cloudflared service install
-```
-
----
-
-## 📋 リリース時にClaudeが確認するチェックリスト
-
-- [ ] アプリ名・リポジトリ名確認
-- [ ] 初回か更新かを確認
-- [ ] localStorage完結か、サーバーサイド必要かを確認
-- [ ] ローカルフォルダパス確認
-- [ ] GitHub Secretsは登録済みか確認（初回のみ）
-- [ ] nginx設定は済みか確認（初回のみ）
-- [ ] Cloudflare Tunnelは済みか確認（サーバーサイドアプリのみ）
+- **GitHub Actions自動デプロイ**：Cloudflare Tunnel設定後に再挑戦
+  - 原因：GitHub ActionsからローカルIP(192.168.11.50)へのSSH接続不可
+- **サーバーサイドアプリのリリース**：Cloudflare Tunnel + ドメイン取得が必要
+  - 対応時期：サーバーサイド機能が必要なアプリが出たとき
 
 ---
 
 ## 🗂 アプリ別リリース状況
 
-| アプリ名 | GitHubリポジトリ | サーバーパス | URL | 状況 |
+| アプリ名 | ローカルパス | GitHubリポジトリ | URL | 状況 |
 |---|---|---|---|---|
-| calorie_app | tubakuro-sys/calorie_app | /var/www/calorie_app | https://tubakuro-sys.github.io/calorie_app/calorie_app.html | ✅ GitHub Pages公開済み |
+| calorie_app | C:\自作ツール\apl\calorie | tubakuro-sys/calorie_app | https://tubakuro-sys.github.io/calorie_app/calorie_app.html | ✅ GitHub Pages公開済み |
 
 ---
 最終更新：2026-05-23
