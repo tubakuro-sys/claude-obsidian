@@ -4,10 +4,11 @@
 
 ---
 
-## 📍 今週のフォーカス
+## 🎯 現在の優先事項
 
 - 個人用アプリ開発
-- Obsidian × Claude 第二の脳システムの運用開始
+- 勉強・技術調査
+- Obsidian × Claude 第二の脳システムの運用
 
 ## 🔄 進行中のプロジェクト
 
@@ -27,11 +28,12 @@
 - 2026-05-23：CLAUDE_STARTUP.md をMCP使用方針含め更新
 - 2026-05-23：Claude指示をFilesystem MCP優先・obsidian-mcp不要に最適化・設定完了
 - 2026-05-23：TOEIC L&R「今日の問題」システムプロンプト設計・Obsidian登録完了
-- 2026-05-23：保管庫ガイド全ファイル（VAULT_MAP / README / Claudeへ_保管庫ガイド / マスターガイドv2）を最新状態に更新
-- 2026-05-23：Filesystem MCPでの読み書き動作確認完了（obsidian-mcp不要で安定稼働）
+- 2026-05-23：保管庫ガイド全ファイル更新完了
+- 2026-05-23：Filesystem MCPでの読み書き動作確認完了
 - 2026-05-23：claude_desktop_config.jsonのJSONエラー修正・mcpServers設定復旧完了
-- 2026-05-23：MEMORY_CORE.mdの個人情報をボかし、MISTAKES_LOGに記録。今後Claudeは個人情報を具体的に書き込まない方針に変更
-- 2026-05-23：Android携帯からClaudeにアクセスする場合、GitHubパブリック化後はraw URLでファイル読み取り可能になる予定
+- 2026-05-23：MEMORY_CORE.mdの個人情報をボかす方針に変更
+- 2026-05-23：Claude指示をCLAUDE_STARTUP参照のみに簡略化・メンテナンス性向上
+- 2026-05-23：MEMORY_COREの優先事項をCURRENT_STATUSに統合・関連ファイルセクション削除
 
 ## 🧩 今抱えている課題・迷っていること
 
