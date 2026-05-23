@@ -37,7 +37,8 @@
 - 2026-05-23：保管庫ガイド全ファイル（VAULT_MAP / README / Claudeへ_保管庫ガイド / マスターガイドv2）を最新状態に更新
 - 2026-05-23：Filesystem MCPでの読み書き動作確認完了（obsidian-mcp不要で安定稼働）
 - 2026-05-23：claude_desktop_config.jsonのJSONエラー修正・mcpServers設定復旧完了
-- 2026-05-23：Claude資格（Anthropic Claude認定資格）学習支援AIシステムプロンプト設計・Obsidian登録完了
+- 2026-05-23：MEMORY_CORE.mdの個人情報をボかし、MISTAKES_LOGに記録。今後Claudeは個人情報を具体的に書き込まない方针に変更
+- 2026-05-23：Android携帯からClaudeにアクセスする場合、GitHubパブリック化後はraw URLでファイル読み取り可能になる予定
 
 ## 🧩 今抱えている課題・迷っていること
 
