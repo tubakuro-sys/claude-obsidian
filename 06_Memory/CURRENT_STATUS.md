@@ -1,5 +1,7 @@
 # CURRENT STATUS（今この瞬間の状況）
 
+> ⚠️ 運用ルール：直近1週間の決定事項のみ保持。古いものは該当日のDaily Logに退避する。
+
 ---
 
 ## 📍 今週のフォーカス
@@ -16,18 +18,9 @@
 | TOEIC L&R 今日の問題 | ✅ 初版完成 | 日々の学習で活用 |
 | Claude資格学習支援AI | ✅ 初版完成 | 日々の学習で活用 |
 
-## ⚡ 直近の決定事項
+## ⚡ 直近の決定事項（直近1週間）
 
-- 2026-05-22：Claude Desktop + obsidian-mcp 接続完了
-- 2026-05-22：第二の脳システム フォルダ構成・核心ファイル設計・作成完了
-- 2026-05-22：GitHub private repo（tubakuro-sys/claude-obsidian）作成・push完了
-- 2026-05-22：obsidian-gitプラグイン導入、Windows側自動同期完了
-- 2026-05-22：Linuxサーバー（nas001）clone・MCP設定・自動pull完了
-- 2026-05-22：Android携帯はGitHubブラウザで読み取り運用に決定
-- 2026-05-22：本日の全作業を `04_Logs/Daily/2026-05-22.md` に記録完了
-- 2026-05-22：obsidian-git自動コミット設定を修正（interval 30分 + 編集停止後コミットON）
-- 2026-05-22：Filesystem MCPを追加（obsidian-mcpのedit-noteタイムアウト問題の対策）
-- 2026-05-22：各端末の権限を確定（Windows：読み書きpush / Linux：読み書きのみ / Android：読み取りのみ）
+- 2026-05-22：環境構築完了（詳細 → [[04_Logs/Daily/2026-05-22]]）
 - 2026-05-23：簿記3級クイズアプリ「今日の問題」初版作成・Obsidian登録完了
 - 2026-05-23：obsidian-mcp を最新版に更新（npm update -g）
 - 2026-05-23：ファイル書き込みをFilesystem MCP優先に切り替え（タイムアウト根本対策）
@@ -37,7 +30,7 @@
 - 2026-05-23：保管庫ガイド全ファイル（VAULT_MAP / README / Claudeへ_保管庫ガイド / マスターガイドv2）を最新状態に更新
 - 2026-05-23：Filesystem MCPでの読み書き動作確認完了（obsidian-mcp不要で安定稼働）
 - 2026-05-23：claude_desktop_config.jsonのJSONエラー修正・mcpServers設定復旧完了
-- 2026-05-23：MEMORY_CORE.mdの個人情報をボかし、MISTAKES_LOGに記録。今後Claudeは個人情報を具体的に書き込まない方针に変更
+- 2026-05-23：MEMORY_CORE.mdの個人情報をボかし、MISTAKES_LOGに記録。今後Claudeは個人情報を具体的に書き込まない方針に変更
 - 2026-05-23：Android携帯からClaudeにアクセスする場合、GitHubパブリック化後はraw URLでファイル読み取り可能になる予定
 
 ## 🧩 今抱えている課題・迷っていること
