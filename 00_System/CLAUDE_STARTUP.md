@@ -4,6 +4,17 @@
 
 ---
 
+## 🌐 モバイル時のアクセス方法
+
+Filesystem MCPが使えない場合（モバイル等）は、以下のベースURLを使ってファイルを読み取る：
+
+**ベースURL：** `https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/`
+
+例：`06_Memory/MEMORY_CORE.md` を読む場合
+→ `https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/06_Memory/MEMORY_CORE.md`
+
+---
+
 ## 🛠 MCP使用方針
 
 | 操作 | 使用MCP | 理由 |
