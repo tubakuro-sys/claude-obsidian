@@ -14,6 +14,7 @@
 | Obsidian第二の脳構築 | ✅ 完了 | 日常運用を開始する |
 | 簿記3級 今日の問題 | ✅ 初版完成 | 日々の学習で活用 |
 | TOEIC L&R 今日の問題 | ✅ 初版完成 | 日々の学習で活用 |
+| Claude資格学習支援AI | ✅ 初版完成 | 日々の学習で活用 |
 
 ## ⚡ 直近の決定事項
 
@@ -36,6 +37,7 @@
 - 2026-05-23：保管庫ガイド全ファイル（VAULT_MAP / README / Claudeへ_保管庫ガイド / マスターガイドv2）を最新状態に更新
 - 2026-05-23：Filesystem MCPでの読み書き動作確認完了（obsidian-mcp不要で安定稼働）
 - 2026-05-23：claude_desktop_config.jsonのJSONエラー修正・mcpServers設定復旧完了
+- 2026-05-23：Claude資格（Anthropic Claude認定資格）学習支援AIシステムプロンプト設計・Obsidian登録完了
 
 ## 🧩 今抱えている課題・迷っていること
 
