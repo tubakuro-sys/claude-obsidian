@@ -28,7 +28,12 @@
 - 2026-05-22：各端末の権限を確定（Windows：読み書きpush / Linux：読み書きのみ / Android：読み取りのみ）
 - 2026-05-23：簿記3級クイズアプリ「今日の問題」初版作成・Obsidian登録完了
 - 2026-05-23：obsidian-mcp を最新版に更新（npm update -g）
-- 2026-05-23：ファイル書き込みをFilesystem MCP優先に切り替え（タイムアウト対策）
+- 2026-05-23：ファイル書き込みをFilesystem MCP優先に切り替え（タイムアウト根本対策）
+- 2026-05-23：CLAUDE_STARTUP.md をMCP使用方針含め更新
+- 2026-05-23：Claude指示をFilesystem MCP優先・obsidian-mcp不要に最適化・設定完了
+- 2026-05-23：保管庫ガイド全ファイル（VAULT_MAP / README / Claudeへ_保管庫ガイド / マスターガイドv2）を最新状態に更新
+- 2026-05-23：Filesystem MCPでの読み書き動作確認完了（obsidian-mcp不要で安定稼働）
+- 2026-05-23：claude_desktop_config.jsonのJSONエラー修正・mcpServers設定復旧完了
 
 ## 🧩 今抱えている課題・迷っていること
 
