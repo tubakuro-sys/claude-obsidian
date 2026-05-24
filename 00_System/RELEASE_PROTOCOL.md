@@ -10,10 +10,10 @@
 |---|---|
 | 開発フォルダ | `C:\自作ツール\apl\アプリ名\` |
 | GitHubユーザー | tubakuro-sys |
-| サーバー | nas001（Ubuntu / 192.168.11.50） |
-| SSHユーザー | manager |
+| サーバー | nas001（Ubuntu） |
+| SSHユーザー | （省略） |
 | サーバーデプロイ先 | `/var/www/アプリ名/` |
-| SSH鍵 | `/home/manager/.ssh/id_ed25519` |
+| SSH鍵 | （省略） |
 
 ---
 
@@ -87,9 +87,7 @@ sudo ln -s /etc/nginx/sites-available/アプリ名 /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-### Step 6：動作確認（Claudeが確認URLを案内）
-- GitHub Pages URL: `https://tubakuro-sys.github.io/アプリ名/ファイル名.html`
-- ローカルネットワーク: `http://192.168.11.50`
+- **動作確認**：GitHub Pages URLまたはローカルネットワークアドレス
 
 ### Step 7：Obsidian記録（Claudeが実施）
 - `RELEASE_PROTOCOL.md` のアプリ別リリース状況テーブルを更新
