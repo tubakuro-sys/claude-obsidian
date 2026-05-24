@@ -45,7 +45,19 @@
 
 **ベースパス：** `C:\資料\obsidian\claude-obsidian\`
 
-**モバイル時：** 読み取りは `https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/` を使用。書き込みはスキップし「PC版で記録してください」と伝える。
+**モバイル時：** 以下のフルURLで各ファイルを読み取る。書き込みはスキップし「PC版で記録してください」と伝える。
+
+| ファイル | URL |
+|---|---|
+| MEMORY_CORE | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/06_Memory/MEMORY_CORE.md |
+| CURRENT_STATUS | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/06_Memory/CURRENT_STATUS.md |
+| MISTAKES_SUMMARY | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/07_Mistakes/MISTAKES_SUMMARY.md |
+| DEV_FLOW | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/00_System/DEV_FLOW.md |
+| RELEASE_PROTOCOL | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/00_System/RELEASE_PROTOCOL.md |
+| RULES | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/08_Rules/RULES.md |
+| VAULT_MAP | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/00_System/VAULT_MAP.md |
+| APP_LIST | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/00_System/APP_LIST.md |
+| MISTAKES_LOG | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/07_Mistakes/MISTAKES_LOG.md |
 
 ---
 

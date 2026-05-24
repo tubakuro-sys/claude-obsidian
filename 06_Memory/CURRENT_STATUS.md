@@ -29,26 +29,30 @@
 - APP_LIST.md 新規作成・VAULT_MAP.md 全面更新完了
 - Obsidian記録漏れ防止チェックリストを MISTAKES_LOG.md に追加
 - Obsidian起動フロー軽量化（MISTAKES_SUMMARY新設・MEMORY_CORE簡素化・トークン約55%削減）
-- Obsidian保管庫の不要ファイル整理・構造最適化完了（ogawaがコミット・プッシュ済み）
-- **Androidモバイル閲覧環境構築完了（2026-05-24）**
+- Obsidian保管庫の不要ファイル整理・構造最適化完了
+- **Androidモバイル環境構築完了（2026-05-24）**
   - Termux + git でGitHubリポジトリをclone済み
   - Vault パス：`/storage/emulated/0/claude-obsidian`
-  - 更新手順：Termuxで `cd /storage/emulated/0/claude-obsidian && git pull` 後Obsidianで確認
-  - 携帯からのプッシュは未設定（今後検討）
+  - 自動pull設定済み（Termux起動時に自動実行）
+  - git push設定済み（android-syncトークン使用）
+- GitHubリポジトリをpublic化完了（モバイルからraw URLで読み取り可能に）
+- 個人情報含むファイルの修正完了（IPアドレス・SSH情報・居住地詳細削除済み）
+- CLAUDE_STARTUP.mdにモバイル用フルURL一覧を追加
+- 今後の個人情報記録ルール確定：記録前にogawaに確認する
 
 ---
 
 ## 🧩 課題・未対応
 
-- **GitHubリポジトリのpublic化検討中**（モバイルからraw URLで読み取り目的）
-- 個人情報含むファイルの修正完了（茨城県・IPアドレス・SSH情報削除済み）
+- Linuxサーバーのデフォルトゲートウェイ一時設定（再起動で消える可能性）
+- サーバーデータ保存アプリのリリース未確立（Cloudflare Tunnel待ち）
+- モバイルからのObsidianファイル書き込み（リモートMCP構築が必要・Cloudflare Tunnel待ち）
 
 ---
 
 ## 📋 Claudeへの未完了依頼
 
-- サーバーデータ保存対応のリリース方法を別途検討・構築する（Cloudflare Tunnel）
-- 携帯からのgit push設定（検討中）
+- なし
 
 ---
 
@@ -56,7 +60,7 @@
 
 - 統合ポータルサイト作成（アプリが増えたタイミングで着手・APP_LIST.md参照）
 - calorie_app 次機能の検討（内容未定）
-- Android携帯からgit pushできるようにする
+- Cloudflare Tunnel構築（サーバーアプリリリース・モバイル書き込み両方に必要）
 
 ---
 最終更新：2026-05-24
