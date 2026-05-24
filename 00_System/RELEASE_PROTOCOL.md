@@ -105,7 +105,7 @@ sudo nginx -t && sudo systemctl reload nginx
 ## ⚠️ 未解決課題
 
 - **GitHub Actions自動デプロイ**：Cloudflare Tunnel設定後に再挑戦
-  - 原因：GitHub ActionsからローカルIP(192.168.11.50)へのSSH接続不可
+  - 原因：GitHub ActionsからローカルネットワークへのSSH接続不可
 - **サーバーサイドアプリのリリース**：Cloudflare Tunnel + ドメイン取得が必要
   - 対応時期：サーバーサイド機能が必要なアプリが出たとき
 
