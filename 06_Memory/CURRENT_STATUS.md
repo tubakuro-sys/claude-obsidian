@@ -30,6 +30,11 @@
 - Obsidian記録漏れ防止チェックリストを MISTAKES_LOG.md に追加
 - Obsidian起動フロー軽量化（MISTAKES_SUMMARY新設・MEMORY_CORE簡素化・トークン約55%削減）
 - Obsidian保管庫の不要ファイル整理・構造最適化完了（ogawaがコミット・プッシュ済み）
+- **Androidモバイル閲覧環境構築完了（2026-05-24）**
+  - Termux + git でGitHubリポジトリをclone済み
+  - Vault パス：`/storage/emulated/0/claude-obsidian`
+  - 更新手順：Termuxで `cd /storage/emulated/0/claude-obsidian && git pull` 後Obsidianで確認
+  - 携帯からのプッシュは未設定（今後検討）
 
 ---
 
@@ -37,13 +42,13 @@
 
 - **【要対応】** サーバーデータ保存アプリのリリース未確立（Cloudflare Tunnel待ち）
 - Linuxサーバーのデフォルトゲートウェイ一時設定（再起動で消える可能性）
-- Android携帯でのObsidianアプリ表示未解決（Android 13制限）
 
 ---
 
 ## 📋 Claudeへの未完了依頼
 
 - サーバーデータ保存対応のリリース方法を別途検討・構築する（Cloudflare Tunnel）
+- 携帯からのgit push設定（検討中）
 
 ---
 
@@ -51,6 +56,7 @@
 
 - 統合ポータルサイト作成（アプリが増えたタイミングで着手・APP_LIST.md参照）
 - calorie_app 次機能の検討（内容未定）
+- Android携帯からgit pushできるようにする
 
 ---
 最終更新：2026-05-24
