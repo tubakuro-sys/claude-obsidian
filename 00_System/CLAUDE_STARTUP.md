@@ -1,93 +1,83 @@
 # CLAUDE STARTUP PROTOCOL
-> このファイルはClaudeが会話を開始するたびに自動で実行するプロトコル。
-> ogawaが何も言わなくても、Claudeはこの手順を毎回必ず実行する。
+> 会話開始時に毎回自動実行。ogawaが何も言わなくても必ず実行する。
 
 ---
 
-## 🌐 モバイル時のアクセス方法
+## 🚀 起動時の必須アクション（毎回）
 
-Filesystem MCPが使えない場合（モバイル等）は、以下のベースURLを使ってファイルを読み取る：
-
-**ベースURL：** `https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/`
-
-例：`06_Memory/MEMORY_CORE.md` を読む場合
-→ `https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/06_Memory/MEMORY_CORE.md`
-
-モバイルでは読み取りのみ。書き込みはPC版で行う。
-
----
-
-## 🛠 MCP使用方針
-
-| 操作 | 使用MCP | 理由 |
-|---|---|---|
-| ファイル読み込み | Filesystem MCP優先 | obsidian-mcpはタイムアウト頻発 |
-| ファイル書き込み | Filesystem MCP優先 | obsidian-mcpのedit-noteはタイムアウト頻発 |
-| ファイル検索 | obsidian-mcp（使える場合のみ） | search-vaultはFilesystem MCPにない |
-
-**Filesystem MCPのベースパス：** `C:\資料\obsidian\claude-obsidian\`
-
-obsidian-mcpが起動時にタイムアウトした場合は、Filesystem MCPのみで続行する。
-
----
-
-## 🚀 起動時の必須アクション（毎回・自動）
-
-Claudeはogawaとの会話を開始したとき、必ず以下を順番に実行する：
-
-### Step 1：メモリー読み込み
 以下を順番に読む：
-1. `06_Memory/MEMORY_CORE.md` — ogawaの基本情報・絶対ルールを把握
-2. `06_Memory/CURRENT_STATUS.md` — 今の状況・進行中タスク・未完了依頼を確認
-3. `07_Mistakes/MISTAKES_LOG.md` — 過去のミスを確認し、同じミスをしないよう注意
 
-### Step 2：話題に応じて追加で読む
+1. `06_Memory/MEMORY_CORE.md` — ogawaの人物情報
+2. `06_Memory/CURRENT_STATUS.md` — 今の状況・未完了タスク
+3. `07_Mistakes/MISTAKES_SUMMARY.md` — ミス教訓の要点（軽量版）
+
+読み込み完了後：「メモリー読み込み完了。[未完了タスクがあればここで報告]」
+
+---
+
+## 📂 話題別・追加読み込みファイル
+
 | 話題 | 読むファイル |
 |---|---|
-| 「〇〇アプリ作って」 | `00_System/DEV_FLOW.md` を読んでフローに従う |
-| 「リリースして」「更新して」 | `00_System/RELEASE_PROTOCOL.md` を読んで実行する |
-| 開発・コーディング全般 | `08_Rules/RULES.md` |
-| 特定プロジェクトの話題 | `02_Projects/該当ファイル` |
-| 構成・設定の話題 | `00_System/VAULT_MAP.md` |
-
-### Step 3：起動確認
-読み込み完了後、一言添える：
-「メモリー読み込み完了。[未完了タスクがあればここで報告]」
+| アプリ開発全般 | `00_System/DEV_FLOW.md` |
+| リリース・更新 | `00_System/RELEASE_PROTOCOL.md` |
+| コーディングルール | `08_Rules/RULES.md` |
+| 特定プロジェクト | `02_Projects/該当ファイル` |
+| 保管庫構成確認 | `00_System/VAULT_MAP.md` |
+| アプリURL確認 | `00_System/APP_LIST.md` |
+| ミス詳細確認 | `07_Mistakes/MISTAKES_LOG.md` |
 
 ---
 
-## 📋 会話中のルール
+## 🛠 MCP使用方針（ツール名を間違えない）
 
-- 不確かな情報は「確認が必要です」と明示する（ハルシネーション禁止）
-- コードを書くときはバージョン・環境を確認してから書く
-- 保管庫内のファイルに変更があった場合、関連するガイド・マップ類も合わせて更新する
+| 操作 | 使うツール | 注意 |
+|---|---|---|
+| ファイル読み込み | `Filesystem:read_text_file` / `Filesystem:read_multiple_files` | |
+| ファイル新規作成・上書き | `filesystem:write_file`（小文字） | 大文字Filesystemは失敗する |
+| ファイル部分編集 | `Filesystem:edit_file` | |
+| ファイル検索 | `Filesystem:search_files` | |
+| ディレクトリ確認 | `filesystem:directory_tree` | |
+
+**ベースパス：** `C:\資料\obsidian\claude-obsidian\`
+
+**モバイル時：** 読み取りは `https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/` を使用。書き込みはスキップし「PC版で記録してください」と伝える。
 
 ---
 
-## 💾 書き込みのルール
-
-ogawaが「記録して」「書き込みして」と言った場合、または会話の内容が以下に該当する場合は、Filesystem MCPで該当ファイルに書き込む：
+## 💾 書き込みルール
 
 | 内容 | 書き込み先 |
 |---|---|
-| 未完了タスク・依頼 | `CURRENT_STATUS.md` の「Claudeへの未完了依頼」 |
-| 決定事項 | `CURRENT_STATUS.md` の「直近の決定事項」 |
-| ミス・反省 | `MISTAKES_LOG.md` |
-| 学び・気づき | `06_Memory/INSIGHTS.md` |
-| プロジェクト進捗 | `02_Projects/該当ファイル` |
-| リリース状況 | `00_System/RELEASE_PROTOCOL.md` のアプリ別リリース状況テーブル |
+| 決定事項・状況変化 | `CURRENT_STATUS.md` |
+| ミス・反省 | `MISTAKES_LOG.md` ＋ `MISTAKES_SUMMARY.md`（1行追記） |
+| 新規アプリ登録 | `APP_LIST.md` ＋ `RELEASE_PROTOCOL.md` |
+| ファイル構成変化 | `VAULT_MAP.md` |
+| 未完了依頼 | `CURRENT_STATUS.md` の未完了依頼欄 |
 
-書き込み後は「〇〇に記録しました」と一言報告する。
-モバイルからの場合は書き込みをスキップし「PC版で記録してください」と伝える。
+書き込み後は「〇〇に記録しました」と報告する。
 
 ---
 
-## ⚠️ 絶対に守るルール
+## ✅ 会話終了前チェックリスト（毎回必須）
+
+以下を確認し、漏れがあれば追記してから終了する：
+
+- [ ] 新しい決定事項を `CURRENT_STATUS.md` に記録したか
+- [ ] プロジェクト状態変化を `CURRENT_STATUS.md` プロジェクト表に反映したか
+- [ ] 新しいミスを `MISTAKES_LOG.md` ＋ `MISTAKES_SUMMARY.md` に記録したか
+- [ ] アプリリリースがあれば `APP_LIST.md` / `RELEASE_PROTOCOL.md` を更新したか
+- [ ] ファイル構成変化があれば `VAULT_MAP.md` を更新したか
+- [ ] 未完了依頼・積み残しを `CURRENT_STATUS.md` に記録したか
+
+---
+
+## ⚠️ 絶対ルール
 
 1. ハルシネーションしない。知らないことは「わからない」と言う
-2. `MISTAKES_LOG.md` に記録されたミスは2度としない
-3. ogawaの依頼はすべて記録し、完了するまで追跡する
+2. `MISTAKES_SUMMARY.md` に記録された教訓は必ず守る
+3. ogawaの依頼はすべて記録し完了するまで追跡する
+4. 運用のしやすさ・トークン効率・ミスによる手間を常に意識してメンテナンスする
 
 ---
-
-最終更新：2026-05-23
+最終更新：2026-05-24

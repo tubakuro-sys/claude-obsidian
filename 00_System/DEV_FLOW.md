@@ -12,7 +12,7 @@
 | エディタ | VS Code + Live Server拡張 |
 | バージョン管理 | Git（git version 2.54.0） |
 | 新規初期化スクリプト | `C:\自作ツール\apl\new_app.bat` |
-| 更新リリーススクリプト | `C:\自作ツール\apl\アプリ名\release.bat` |
+| 更新リリーススクリプト | `C:\自作ツール\apl\release.bat`（共通版・1個のみ） |
 | Claude Code | インストール済み（Proプラン・追加課金なし） |
 
 ---
@@ -64,8 +64,10 @@ ogawaが技術選定に納得したら作成開始。不明点があれば先に
 
 ### Phase 6：Obsidian記録（Claudeが実施）
 - `02_Projects/アプリ名.md` にプロジェクトノートを新規作成
+- `00_System/APP_LIST.md` にアプリ情報を追記
 - `RELEASE_PROTOCOL.md` のアプリ別リリース状況テーブルを更新
 - `CURRENT_STATUS.md` の進行中プロジェクト・決定事項を更新
+- `VAULT_MAP.md` のツリーを更新
 
 ---
 
@@ -73,7 +75,8 @@ ogawaが技術選定に納得したら作成開始。不明点があれば先に
 
 1. `C:\自作ツール\apl\アプリ名\` でファイルを編集
 2. VS Code + Live Serverで動作確認
-3. `release.bat` をダブルクリック → コミットメッセージ入力だけで完了
+3. クラシックCMD（Windowsキー+R → cmd）から `C:\自作ツール\apl\release.bat` を実行
+   → フォルダパスとコミットメッセージを入力するだけで完了
 
 **Claude Codeで修正する場合：**
 ```bash
@@ -118,4 +121,4 @@ claude
   - 詳細：[[00_System/RELEASE_PROTOCOL]] の未解決課題セクション
 
 ---
-最終更新：2026-05-23
+最終更新：2026-05-24

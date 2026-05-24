@@ -19,12 +19,20 @@
 
 ## 🛠 リリーススクリプト（バッチファイル）
 
-ダブルクリックだけでリリースできるスクリプトを用意済み。
-
 | ファイル | 置き場所 | 用途 |
 |---|---|---|
 | `new_app.bat` | `C:\自作ツール\apl\` | 新規アプリの初期化・初回push |
-| `release.bat` | 各アプリフォルダ内 | 更新のpush（コミットメッセージ入力するだけ） |
+| `release.bat` | `C:\自作ツール\apl\`（共通・1個のみ） | 更新のpush（パス入力式・複数アプリ対応） |
+
+### release.bat の使い方（2026-05-24更新）
+1. `Windowsキー + R` → `cmd` → Enter（クラシックCMDで開く）
+2. `"C:\自作ツール\apl\release.bat"` を実行
+3. アプリのフォルダパスを入力（例：`C:\自作ツール\apl\calorie`）
+4. コミットメッセージを入力
+5. `y` で確定 → 自動でpush完了
+
+> ⚠️ Windows Terminalからのダブルクリック起動は文字コード問題で失敗することがある。
+> 必ずクラシックCMD（Windowsキー+R → cmd）から実行する。
 
 ---
 
@@ -62,7 +70,7 @@ sudo chown $USER:$USER /var/www/アプリ名
 git clone https://github.com/tubakuro-sys/アプリ名.git /var/www/アプリ名
 sudo nano /etc/nginx/sites-available/アプリ名
 ```
-nginx設定内容（Claudeがファイル名に合わせて出す）：
+nginx設定内容：
 ```nginx
 server {
     listen 80;
@@ -85,13 +93,14 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ### Step 7：Obsidian記録（Claudeが実施）
 - `RELEASE_PROTOCOL.md` のアプリ別リリース状況テーブルを更新
-- `CURRENT_STATUS.md` の進行中プロジェクト・決定事項を更新
+- `00_System/APP_LIST.md` にアプリ情報を追記
+- `CURRENT_STATUS.md` の決定事項を更新
 
 ---
 
 ## 🔄 更新手順
 
-`C:\自作ツール\apl\アプリ名\release.bat` をダブルクリック → コミットメッセージを入力するだけ。
+`C:\自作ツール\apl\release.bat` をクラシックCMDから実行 → フォルダパスとコミットメッセージを入力するだけ。
 
 ---
 
@@ -108,7 +117,7 @@ sudo nginx -t && sudo systemctl reload nginx
 
 | アプリ名 | ローカルパス | GitHubリポジトリ | URL | 状況 |
 |---|---|---|---|---|
-| calorie_app | C:\自作ツール\apl\calorie | tubakuro-sys/calorie_app | https://tubakuro-sys.github.io/calorie_app/calorie_app.html | ✅ GitHub Pages公開済み |
+| calorie_app | C:\自作ツール\apl\calorie | tubakuro-sys/calorie_app | https://tubakuro-sys.github.io/calorie_app/calorie_app.html | ✅ GitHub Pages公開済み（v7） |
 
 ---
-最終更新：2026-05-23
+最終更新：2026-05-24
