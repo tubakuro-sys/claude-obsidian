@@ -12,9 +12,9 @@
 | 2026-05-24 | デイリーログをwrite_fileで上書き（2度目）。write_fileは新規ファイルのみ・既存は必ずread→edit_file |
 | 2026-05-24 | Claudeが作るbatファイルは英語メッセージのみ・ANSI問題を回避 |
 | 2026-05-24 | 既存ファイルへの追記はwrite_file禁止。必ず読んでからedit_fileで追記する |
-| 2026-05-24 | モバイルでraw.githubusercontent.comは取得不可。github.com/blob/のURLなら取得可能 |
 | 2026-05-24 | プライベート/404/パーミッションエラーを混同して誤案内。エラー種別を正確に確認・伝える |
-| 2026-05-24 | Privateリポジトリでモバイルにraw URLを案内→404。モバイル用は `github.com/blob/` のみ。CURRENT_STATUSのリポジトリ状態を確認してから案内する |
+| 2026-05-24 | モバイルURLは `raw.githubusercontent.com` 形式が正解（リポジトリはPublic）。ClaudeはURLを自分で生成してアクセス不可。必ずogawaに貼り付けてもらう |
+| 2026-05-24 | `github.com/blob/` 形式への変更は誤り。HTMLページが返るため内容取得不可 |
 
 ---
 最終更新：2026-05-24
