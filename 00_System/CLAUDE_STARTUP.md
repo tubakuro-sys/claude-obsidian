@@ -48,17 +48,19 @@
 **モバイル時：** 以下のフルURLで各ファイルを読み取る。書き込みはスキップし「PC版で記録してください」と伝える。
 追加ファイルが必要になった場合は、ogawaに「次のURLをコピーして貼り付けてください：`[URL]`」と案内する。
 
+⚠️ **モバイルURLは必ず `github.com/blob/` 形式を使う。`raw.githubusercontent.com` はPrivateリポジトリでは404になる。**
+
 | ファイル | URL |
 |---|---|
-| MEMORY_CORE | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/06_Memory/MEMORY_CORE.md |
-| CURRENT_STATUS | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/06_Memory/CURRENT_STATUS.md |
-| MISTAKES_SUMMARY | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/07_Mistakes/MISTAKES_SUMMARY.md |
-| DEV_FLOW | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/00_System/DEV_FLOW.md |
-| RELEASE_PROTOCOL | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/00_System/RELEASE_PROTOCOL.md |
-| RULES | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/08_Rules/RULES.md |
-| VAULT_MAP | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/00_System/VAULT_MAP.md |
-| APP_LIST | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/00_System/APP_LIST.md |
-| MISTAKES_LOG | https://raw.githubusercontent.com/tubakuro-sys/claude-obsidian/main/07_Mistakes/MISTAKES_LOG.md |
+| MEMORY_CORE | https://github.com/tubakuro-sys/claude-obsidian/blob/main/06_Memory/MEMORY_CORE.md |
+| CURRENT_STATUS | https://github.com/tubakuro-sys/claude-obsidian/blob/main/06_Memory/CURRENT_STATUS.md |
+| MISTAKES_SUMMARY | https://github.com/tubakuro-sys/claude-obsidian/blob/main/07_Mistakes/MISTAKES_SUMMARY.md |
+| DEV_FLOW | https://github.com/tubakuro-sys/claude-obsidian/blob/main/00_System/DEV_FLOW.md |
+| RELEASE_PROTOCOL | https://github.com/tubakuro-sys/claude-obsidian/blob/main/00_System/RELEASE_PROTOCOL.md |
+| RULES | https://github.com/tubakuro-sys/claude-obsidian/blob/main/08_Rules/RULES.md |
+| VAULT_MAP | https://github.com/tubakuro-sys/claude-obsidian/blob/main/00_System/VAULT_MAP.md |
+| APP_LIST | https://github.com/tubakuro-sys/claude-obsidian/blob/main/00_System/APP_LIST.md |
+| MISTAKES_LOG | https://github.com/tubakuro-sys/claude-obsidian/blob/main/07_Mistakes/MISTAKES_LOG.md |
 
 ---
 

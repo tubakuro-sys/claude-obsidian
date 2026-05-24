@@ -86,5 +86,11 @@
 - **なぜミスした**：「新規作成」と思い込んでedit_fileルールを適用しなかった。同じミスが1度目にも記録されているのに防げなかった
 - **再発防止**：デイリーログ含むすべての既存ファイルへの書き込みは、必ず先にread→edit_fileの手順を踏む。write_fileは本当に新規ファイルのみ
 
+### 2026-05-24｜Claude活用｜モバイルでPrivateリポジトリのraw URLを誤案内
+**何が起きたか**：GitHubリポジトリがPrivateにもかかわらず、`raw.githubusercontent.com` のURLをモバイル用読み取りURLとしてogawaに案内してしまった。実際にはアクセス不可で404になった  
+**なぜミスしたか**：CURRENT_STATUS.mdに「GitHubをPrivateに戻した」と記録されていたにもかかわらず、モバイル用URLとしてraw URLを案内してしまった。記録を読んでいなかったか、読んでも活かせていなかった  
+**次はどうする**：モバイル運用時のURL案内は `github.com/blob/` 形式のみを使う。raw URLはPrivateリポジトリでは使えない。CURRENT_STATUSのリポジトリ公開状態を必ず確認してから案内する  
+**関連ルール**：モバイルでのファイル読み取りは `github.com/blob/` URLのみ有効。raw URLはPrivateリポジトリでは404になる
+
 ---
 最終更新：2026-05-24

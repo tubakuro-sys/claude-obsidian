@@ -43,6 +43,7 @@
   - モバイルでは「チャットに直接貼ったURL」しかアクセス不可のためPublicである必要なし
   - モバイル運用：必要なファイルはClaudeがURLを案内→ogawaが貼り付け→読み込み
   - CLAUDE_STARTUP.mdにURL案内ルールを追記済み
+  - ⚠️ **Claudeへの注意**：モバイル案内URLは必ず `github.com/blob/` 形式を使う。`raw.githubusercontent.com` はPrivateリポジトリでは404になる
 
 ---
 
