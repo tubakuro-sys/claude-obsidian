@@ -28,16 +28,14 @@
 - MCPツール確定：新規作成は `filesystem:write_file`（小文字）、編集は `Filesystem:edit_file`
 - APP_LIST.md 新規作成・VAULT_MAP.md 全面更新完了
 - Obsidian記録漏れ防止チェックリストを MISTAKES_LOG.md に追加
+- Obsidian起動フロー軽量化（MISTAKES_SUMMARY新設・MEMORY_CORE簡素化・トークン約55%削減）
+- Obsidian保管庫の不要ファイル整理・構造最適化完了（ogawaがコミット・プッシュ済み）
 
 ---
 
 ## 🧩 課題・未対応
 
 - **【要対応】** サーバーデータ保存アプリのリリース未確立（Cloudflare Tunnel待ち）
-- **【手動整理】** Obsidian保管庫の不要ファイル残存（ogawaが削除・移動）
-  - `00_System/` 旧版3ファイル（マスターガイドv2.md・Claudeへ_保管庫ガイド.md・運用ガイド.md）
-  - ルート孤立ファイル `Claude資格プロジェクトの文面作成.md`
-  - `AP試験学習/` フォルダを `02_Projects/` へ移動
 - Linuxサーバーのデフォルトゲートウェイ一時設定（再起動で消える可能性）
 - Android携帯でのObsidianアプリ表示未解決（Android 13制限）
 
@@ -52,6 +50,7 @@
 ## 🔮 検討中
 
 - 統合ポータルサイト作成（アプリが増えたタイミングで着手・APP_LIST.md参照）
+- calorie_app 次機能の検討（内容未定）
 
 ---
 最終更新：2026-05-24
