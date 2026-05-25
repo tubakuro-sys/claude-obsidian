@@ -9,6 +9,7 @@
 | # | アプリ名 | 概要 | URL | リリース方法 | 公開日 | バージョン |
 |---|---|---|---|---|---|---|
 | 1 | calorie_app | カロリー管理アプリ | [開く](https://tubakuro-sys.github.io/calorie_app/calorie_app.html) | GitHub Pages | 2026-05-23 | v7 |
+| 2 | syarou | 社労士学習アプリ | [開く](https://tubakuro-sys.github.io/syarou/syarou.html) | GitHub Pages | 2026-05-25 | v1 |
 
 ---
 
@@ -40,5 +41,14 @@
 - **リリース方法候補**：GitHub Pages（tubakuro-sys.github.io リポジトリ）
 - **ステータス**：📋 課題として記録済み・アプリが増えたタイミングで着手
 
+### syarou
+- **概要**：社労士学習アプリ
+- **URL**：https://tubakuro-sys.github.io/syarou/syarou.html
+- **GitHubリポジトリ**：https://github.com/tubakuro-sys/syarou
+- **ローカルパス**：`C:\自作ツール\apl\syarou\`
+- **データ保存**：localStorage
+- **リリース方法**：GitHub Pages
+- **公開日**：2026-05-25
+
 ---
-最終更新：2026-05-24
+最終更新：2026-05-25

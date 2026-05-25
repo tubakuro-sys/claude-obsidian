@@ -36,31 +36,37 @@
 
 ---
 
-## 🆕 新規リリース手順（Claudeが順番に進める）
+## 🆕 新規リリース手順【GitHub Pages（localStorageアプリ）】
 
-### Step 1：Claudeが確認すること
-- アプリ名・ファイル名
-- サーバーサイド機能が必要か（localStorageのみ → GitHub Pages、サーバー必要 → Cloudflare Tunnel）
-- `C:\自作ツール\apl\アプリ名\` にファイルが存在するか
+> ✅ syarouで実績済みの確立手順（2026-05-25）
 
-### Step 2：GitHubリポジトリ作成（ogawaが実施）
-Claudeが以下を指示する：
-1. https://github.com/new を開く
-2. Repository name: `アプリ名`
-3. Public を選択
-4. **README・.gitignore・licenseは追加しない**（空リポジトリ）
-5. 「Create repository」をクリック
-6. リポジトリURLをClaudeに伝える
+### 事前準備（ogawaが実施）
+1. `C:\自作ツール\apl\アプリ名\` フォルダを作成し、HTMLファイルを置く
+2. GitHubに空リポジトリを作成（README・.gitignore・licenseは追加しない）
+   → https://github.com/new
 
-### Step 3：new_app.bat を実行（ogawaが実施）
-`C:\自作ツール\apl\new_app.bat` をダブルクリック → アプリ名を入力するだけ。
-（git init・deploy.yml生成・初回pushまで自動）
+### Step 1：new_app.bat を実行（ogawaが実施）
+1. `C:\自作ツール\apl\new_app.bat` をダブルクリック
+2. アプリ名を入力（GitHubリポジトリ名と同じ）
+3. `y` で確認 → git init・deploy.yml生成・初回pushまで自動実行
 
-### Step 4：GitHub Pages公開（localStorageアプリのみ・ogawaが実施）
-Claudeが以下を指示する：
+> ⚠️ GitHub Actionsのエラー（missing server host）は無視してOK。
+> deploy.ymlは将来のCloudflare Tunnel用。GitHub Pagesリリースには影響なし。
+
+### Step 2：GitHub Pages を有効化（ogawaが実施）
 1. `https://github.com/tubakuro-sys/アプリ名/settings/pages` を開く
 2. Source: `Deploy from a branch`
-3. Branch: `main` / `/ (root)` → Save
+3. Branch: `main` / `/ (root)` → **Save**
+4. 数分後にアクセス確認：`https://tubakuro-sys.github.io/アプリ名/ファイル名.html`
+
+### Step 3：Obsidian記録（Claudeが実施）
+- `APP_LIST.md` にアプリ情報を追記
+- `RELEASE_PROTOCOL.md` のアプリ別リリース状況テーブルを更新
+- `CURRENT_STATUS.md` のプロジェクト表と決定事項を更新
+
+---
+
+## 🆕 新規リリース手順【サーバーアプリ（Cloudflare Tunnel待ち・未実績）】
 
 ### Step 5：Linuxサーバー設定（Claudeがコマンドを出す）
 ogawaがSSHで接続して実行：
@@ -116,6 +122,7 @@ sudo nginx -t && sudo systemctl reload nginx
 | アプリ名 | ローカルパス | GitHubリポジトリ | URL | 状況 |
 |---|---|---|---|---|
 | calorie_app | C:\自作ツール\apl\calorie | tubakuro-sys/calorie_app | https://tubakuro-sys.github.io/calorie_app/calorie_app.html | ✅ GitHub Pages公開済み（v7） |
+| syarou | C:\自作ツール\apl\syarou | tubakuro-sys/syarou | https://tubakuro-sys.github.io/syarou/syarou.html | ✅ GitHub Pages公開済み（v1） |
 
 ---
-最終更新：2026-05-24
+最終更新：2026-05-25

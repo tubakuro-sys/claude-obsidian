@@ -17,6 +17,7 @@
 | 簿記3級 今日の問題 | ✅ 初版完成 | 日々の学習で活用 | [[02_Projects/簿記3級_今日の問題]] |
 | TOEIC L&R 今日の問題 | ✅ 初版完成 | 日々の学習で活用 | [[02_Projects/TOEIC_今日の問題]] |
 | Claude資格学習支援AI | ✅ 初版完成 | 日々の学習で活用 | [[02_Projects/Claude資格学習支援AI]] |
+| syarou | ✅ v1公開済み | 日々の学習で活用 | [[02_Projects/syarou]] |
 | calorie_app | ✅ v7公開済み | 次機能の検討 | [[02_Projects/calorie_app/01_仕様書]] |
 
 ---
@@ -24,6 +25,8 @@
 ## ⚡ 直近の決定事項（2026-05-25）
 
 - Androidの obsidian-git 自動sync設定完了（10分間隔・編集停止後syncはOFF）
+- syarou v1 初回リリース完了（GitHub Pages）
+- new_app.bat 実總確認：bat実行→GitHub Pages有効化のみでOK・Secrets不要
 
 ## ⚡ 決定事項（2026-05-24）
 
