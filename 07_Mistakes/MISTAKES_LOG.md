@@ -92,5 +92,11 @@
 **次はどうする**：モバイル運用時のURL案内は `github.com/blob/` 形式のみを使う。raw URLはPrivateリポジトリでは使えない。CURRENT_STATUSのリポジトリ公開状態を必ず確認してから案内する  
 **関連ルール**：モバイルでのファイル読み取りは `github.com/blob/` URLのみ有効。raw URLはPrivateリポジトリでは404になる
 
+### 2026-05-25｜Claude活用｜モバイル時にMEMORY_CORE・CURRENT_STATUSを読まずに会話を進めた
+**何が起きたか**：STARTUP.mdにモバイル時の起動手順が記載されているにもかかわらず、MISTAKES_LOGのみ読んだ後にMEMORY_COREとCURRENT_STATUSを読まずに会話を進めた。ogawaから指摘されるまでURL案内もしなかった  
+**なぜミスしたか**：STARTUP.mdの指示を最後まで読まずに行動した。モバイル時はURLを案内してogawaに貼り付けてもらう手順があるのに実行しなかった  
+**次はどうする**：モバイル時はMEMORY_CORE・CURRENT_STATUS・MISTAKES_SUMMARYの3ファイルを毎回必ずURL案内して読む  
+**関連ルール**：CLAUDE_STARTUP.mdのモバイルセクションに記載のURL一覧を必ず全て案内・読み込む
+
 ---
-最終更新：2026-05-24
+最終更新：2026-05-25

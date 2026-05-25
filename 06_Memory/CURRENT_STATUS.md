@@ -21,7 +21,11 @@
 
 ---
 
-## ⚡ 直近の決定事項（2026-05-24）
+## ⚡ 直近の決定事項（2026-05-25）
+
+- Androidの obsidian-git 自動sync設定完了（10分間隔・編集停止後syncはOFF）
+
+## ⚡ 決定事項（2026-05-24）
 
 - release.bat を共通版に刷新（`C:\自作ツール\apl\release.bat` に1個のみ・パス入力式）
 - Windows Terminal → クラシックCMD運用に統一（Windowsキー+R → cmd）
