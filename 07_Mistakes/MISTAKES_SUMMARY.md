@@ -16,5 +16,8 @@
 | 2026-05-24 | モバイルURLは `raw.githubusercontent.com` 形式が正解（リポジトリはPublic）。ClaudeはURLを自分で生成してアクセス不可。必ずogawaに貼り付けてもらう |
 | 2026-05-24 | `github.com/blob/` 形式への変更は誤り。HTMLページが返るため内容取得不可 |
 
+| 2026-05-26 | リリース完了報告時は必ず3点セットを更新→ CURRENT_STATUS・APP_LIST・RELEASE_PROTOCOL。会話終了前チェックリストを必ず確認する |
+| 2026-05-26 | 既存ファイルへの追記にwrite_file使用禁止（3度目）。write_fileは新規専用。追記は必ずread→edit_file |
+
 ---
-最終更新：2026-05-24
+最終更新：2026-05-26

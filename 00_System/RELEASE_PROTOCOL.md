@@ -121,8 +121,8 @@ sudo nginx -t && sudo systemctl reload nginx
 
 | アプリ名 | ローカルパス | GitHubリポジトリ | URL | 状況 |
 |---|---|---|---|---|
-| calorie_app | C:\自作ツール\apl\calorie | tubakuro-sys/calorie_app | https://tubakuro-sys.github.io/calorie_app/calorie_app.html | ✅ GitHub Pages公開済み（v7） |
-| syarou | C:\自作ツール\apl\syarou | tubakuro-sys/syarou | https://tubakuro-sys.github.io/syarou/syarou.html | ✅ GitHub Pages公開済み（v1） |
+| calorie_app | C:\自作ツール\apl\calorie | tubakuro-sys/calorie_app | https://tubakuro-sys.github.io/calorie_app/calorie_app.html | ✅ GitHub Pages公開済み（v10） |
+| syarou | C:\自作ツール\apl\syarou | tubakuro-sys/syarou | https://tubakuro-sys.github.io/syarou/syarou.html | ✅ GitHub Pages公開済み（v9） |
 
 ---
-最終更新：2026-05-25
+最終更新：2026-05-26

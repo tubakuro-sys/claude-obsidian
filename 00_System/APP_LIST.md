@@ -8,8 +8,8 @@
 
 | # | アプリ名 | 概要 | URL | リリース方法 | 公開日 | バージョン |
 |---|---|---|---|---|---|---|
-| 1 | calorie_app | カロリー管理アプリ | [開く](https://tubakuro-sys.github.io/calorie_app/calorie_app.html) | GitHub Pages | 2026-05-23 | v8（v9デバッグ中） |
-| 2 | syarou | 社労士学習アプリ | [開く](https://tubakuro-sys.github.io/syarou/syarou.html) | GitHub Pages | 2026-05-25 | v9完成・未リリース |
+| 1 | calorie_app | カロリー管理アプリ | [開く](https://tubakuro-sys.github.io/calorie_app/calorie_app.html) | GitHub Pages | 2026-05-23 | v10リリース済み |
+| 2 | syarou | 社労士学習アプリ | [開く](https://tubakuro-sys.github.io/syarou/syarou.html) | GitHub Pages | 2026-05-25 | v9リリース済み |
 
 ---
 
@@ -24,9 +24,9 @@
 - **対応デバイス**：スマホ・PC両対応
 - **リリース方法**：GitHub Pages
 - **公開日**：2026-05-23
-- **最終更新**：2026-05-26（v8：Ollama AI機能全面追加）
+- **最終更新**：2026-05-26（v10リリース）
 - **AI機能**：nas001（qwen2.5:7b）と連携。料理名→栄養素推定、レシピ提案、AIチャット
-- **未解決バグ**：AIチャットで3品中1品しか表示されない（v9でデバッグ中）
+- **v10の変更**：3品表示バグ修正・バーコード削除・食材連携・食材記憶・サジェスト・フォーム反映バグ修正
 - **プロジェクトノート**：[[02_Projects/calorie_app/01_仕様書]]
 
 ### syarou
@@ -37,7 +37,7 @@
 - **データ保存**：localStorage
 - **リリース方法**：GitHub Pages
 - **公開日**：2026-05-25
-- **最終更新**：2026-05-26（v9：PDF取込→JSONペースト方式に変更・APIキー不要）
+- **最終更新**：2026-05-26（v9リリース）
 - **v9の変更**：「➕ 問題追加」タブ。ClaudeにJSONで問題作成依頼→貼り付けるだけで追加
 
 ---

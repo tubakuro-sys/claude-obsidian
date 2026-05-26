@@ -98,5 +98,17 @@
 **次はどうする**：モバイル時はMEMORY_CORE・CURRENT_STATUS・MISTAKES_SUMMARYの3ファイルを毎回必ずURL案内して読む  
 **関連ルール**：CLAUDE_STARTUP.mdのモバイルセクションに記載のURL一覧を必ず全て案内・読み込む
 
+### 2026-05-26｜Claude活用｜リリース記録の更新漏れ（APP_LIST・RELEASE_PROTOCOL）
+**何が起きたか**：calorie_app v10・syarou v9のリリース完了を報告された際、CURRENT_STATUSのみ更新してAPP_LISTとRELEASE_PROTOCOLの更新を怠った。ogawaに画像で指摘されるまで気づかなかった  
+**なぜミスしたか**：「記録して」の依頼をCURRENT_STATUS更新だけで完了と思い込んだ。CLAUDE_STARTUPの会話終了前チェックリストを確認していなかった  
+**次はどうする**：リリース完了報告を受けたら必ず3点セットを更新する → `CURRENT_STATUS.md`・`APP_LIST.md`・`RELEASE_PROTOCOL.md`。会話終了前チェックリストを毎回確認する  
+**関連ルール**：CLAUDE_STARTUP.md の「書き込みルール」と「会話終了前チェックリスト」を参照
+
+### 2026-05-26｜Claude活用｜MISTAKES_LOGをwrite_fileで全消去（3度目）
+**何が起きたか**：MISTAKES_LOGへの追記にwrite_fileを使用し、過去の記録を全消去してしまった。ogawaがgitで復元してくれた  
+**なぜミスしたか**：「既存ファイルへの書き込みはedit_file」というルールが記録されているにもかかわらず、また同じミスを犯した  
+**次はどうする**：ファイルへの追記は**必ずedit_file**。write_fileを使う前に「これは本当に新規ファイルか？」と自問する。既存ファイルに少しでも疑いがあればまずread_fileで確認する  
+**関連ルール**：write_fileは新規ファイル専用。既存ファイルへの書き込みは全てedit_file
+
 ---
-最終更新：2026-05-25
+最終更新：2026-05-26
