@@ -112,3 +112,25 @@
 
 ---
 最終更新：2026-05-26
+
+### 2026-05-29｜Claude活用｜長時間セッションによるMCPタイムアウトと記録漏れ
+**何が起きたか**：Claude Desktopを長時間使用した結果、Obsidian MCPが複数回タイムアウト。記録作業が中断・再試行を繰り返した。デイリーログの内容が薄くなり、再発防止策の記録も漏れた  
+**なぜミスしたか**：  
+① userPreferencesにMEMORY_CORE・CURRENT_STATUSのURLが未登録のため毎回手動でURLを貼る必要があり、セッションが長くなる構造になっていた  
+② 長時間稼働によりMCPサーバープロセスのメモリが逼迫した  
+③ 記録完了チェックリストを会話終了前に確認していなかった  
+**次はどうする**：  
+① 今すぐSettings > ProfileにMEMORY_CORE・CURRENT_STATUSのURLを追加する  
+② 会話が長くなったら途中でClaude Desktopを再起動する習慣をつける  
+③ 会話終了前に必ず以下のチェックリストを確認する  
+
+#### ✅ セッション終了前チェックリスト（毎回必ず確認）
+| チェック | 対象 |
+|---|---|
+| CURRENT_STATUS.md 更新済み | 決定事項・TODO・課題 |
+| デイリーログ 作成済み・詳細記載済み | 05_Logs/Daily/YYYY-MM-DD.md |
+| 今週TODOに未着手タスク反映済み | CURRENT_STATUS.md |
+| 新しいミス・失敗はMISTAKES_LOGに記録済み | 07_Mistakes/MISTAKES_LOG.md |
+| 記録漏れがないか会話全体を振り返った | - |
+
+**関連ルール**：CLAUDE_STARTUP.mdの会話終了前チェックリストを参照・更新すること

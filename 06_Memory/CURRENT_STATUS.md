@@ -126,6 +126,7 @@
 
 ## 🗓 今週のTODO（5/29〜6/1）
 
+- [x] **userPreferencesのコマンド整理・CLAUDE_STARTUP.mdにコマンド一覧追加**（2026-05-30完了）
 - [ ] Linuxゲートウェイ永続化（30分）
 - [ ] Android運用改善（ブックマーク整理）
 - [ ] 簿記アプリ：復習リスト機能追加
@@ -137,12 +138,48 @@
 - [ ] 習慣トラッカー v1完成
 - [ ] ntfy通知サーバー構築（nas001 Docker）
 - [ ] TOEICアプリ改善（Part別分類）
+- [ ] Grafanaダッシュボード（全端末状態可視化）
+- [ ] RSSニュースダイジェスト（Claude API×ntfy×cron）
+- [ ] 共通モジュール（Python）整備
 
 ## 🗓 再来週のTODO（6/9〜6/15）
 
 - [ ] Home Assistant on Docker（nas001）
 - [ ] SwitchBot連携・オートメーション作成
 - [ ] Windowsデプロイ自動化スクリプト
+- [ ] Cloudflare Tunnel構築
+- [ ] Tailscale設定（外出先からnas001接続）
+
+## 🗓 Obsidian環境最適化TODO
+
+### 現在の課題
+- Claude Desktopの長時間使用でObsidian MCPがタイムアウト（メモリ逼迫）
+- モバイルからの記録が手動コピペ運用（自動化未整備）
+- デイリーログの記載が薄くなりやすい（セッション終了時の確認不足）
+- 学習間違い記録のObsidian自動書き込みが未実装
+- nas001へのGitHub push自動化が未実装
+
+### 改善タスク
+- [ ] セッション2時間超えでClaude Desktop再起動を習慣化（運用ルール徹底）
+- [ ] Filesystem MCP経由の直接書き込みに切り替え検討（現在はObsidian MCP併用）
+- [ ] nas001 Pythonスクリプトによる自動記録・GitHub push自動化
+- [ ] 学習間違い記録のObsidian自動書き込み設計
+- [ ] モバイル運用改善：nas001スクリプトでコピペ不要にする
+- [ ] デイリーログテンプレート作成（Obsidian Templater活用）
+- [ ] VAULT_MAP.md・APP_LIST.mdの定期メンテナンス習慣化
+- [ ] 週次サマリー（WEEKLY_SUMMARY.md）の自動生成フロー設計
+
+---
+
+## 🗓 それ以降のTODO
+
+- [ ] 統合ポータルサイト（アプリ増えたタイミング）
+- [ ] Discord連携・メール通知（共通モジュール経由）
+- [ ] 家計簿ツール（Tesseract OCR・レシート読み取り・SQLite）
+- [ ] 勉強アプリ：ITパスポートアプリ作成
+- [ ] 勉強アプリ：英単語アプリ作成（TOEIC頻出200語）
+- [ ] 勉強アプリ：数学・計算アプリ作成
+- [ ] 勉強アプリ：応用情報アプリ作成（ITパス合格後）
 
 ---
 
@@ -154,19 +191,29 @@
 - Obsidian自動書き込みスクリプト（Python）未作成
 - 携帯からの自動化（現状手動コピペ運用・nas001スクリプト作成で解決予定）
 
-## 🔮 検討中・将来
+### 🔧 Obsidian環境最適化（2026-05-29 追加）
+**現状の問題点と原因：**
+- Claude Desktopを長時間使用するとObsidian MCPがタイムアウトする
+  - 原因：長時間稼働でMCPサーバープロセスのメモリが逼迫する
+  - 対策（暫定）：長いセッションの後はClaude Desktopを再起動する習慣化
+- userPreferencesにMEMORY_CORE・CURRENT_STATUSのURLが未登録
+  - 原因：初期設定時に追加していなかった
+  - 対策：Settings > ProfileにURLを追加する（最優先）
+- モバイルからの記録が手動コピペ運用になっている
+  - 原因：携帯単体ではPythonスクリプト自動実行が不可
+  - 対策（将来）：nas001でObsidian自動書き込みスクリプトを作成
 
-- Home Assistant on Docker（nas001）→ SwitchBot連携・自動化深化
-- Grafanaダッシュボード（全端末状態可視化）
-- RSSニュースダイジェスト（Claude API×ntfy×cron）
-- 家計簿ツール（Tesseract OCR・レシート読み取り・SQLite）
-- 勉強アプリ追加（ITパスポート・英単語・数学・応用情報）
-- 共通モジュール（Python）整備
-- Windowsデプロイ自動化スクリプト
-- Cloudflare Tunnel構築
-- Tailscale設定（外出先からnas001接続）
-- 統合ポータルサイト（アプリ増えたタイミング）
-- Discord連携・メール通知（共通モジュール経由）
+**改善タスク：**
+- [ ] userPreferencesにMEMORY_CORE・CURRENT_STATUSのURLを追加
+- [ ] セッション長時間化時のClaude Desktop再起動を習慣化
+- [ ] 将来：Filesystem MCP経由の直接書き込みに切り替え検討
+- [ ] 将来：学習間違い記録のObsidian自動書き込み設計
+- [ ] 将来：nas001 Pythonスクリプトによる自動記録・GitHub push自動化
+
+**記録漏れが発生した原因（2026-05-29）：**
+- 会話セッションが長時間になりMCPがタイムアウト
+- タイムアウト後に再起動→再記録を繰り返したため同一セッション内での負荷が累積
+- 根本原因：userPreferencesが未整備のため毎回URLを手動貼り付け→会話が長くなりやすい構造になっている
 
 ---
-最終更新：2026-05-29
+最終更新：2026-05-30（Obsidian最適化TODO追加）
