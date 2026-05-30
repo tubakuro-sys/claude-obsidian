@@ -63,7 +63,9 @@ claude-obsidian/
 │
 ├── 06_Memory/                      ★★ Claudeのメモリーコア（最重要）
 │   ├── MEMORY_CORE.md              ogawaの人物情報のみ
-│   ├── CURRENT_STATUS.md           今の状況・進行中タスク・未完了依頼
+│   ├── CURRENT_STATUS.md           今週のTODO・進行中PJ・未完了依頼・直近決定事項
+│   ├── TODO_BACKLOG.md             来週以降・中長期TODOの全量管理
+│   ├── STUDY_PLAN.md               学習計画・受験日程・月次計画・診断結果
 │   └── INSIGHTS.md                 気づき・学びの蓄積
 │
 ├── 07_Mistakes/                    ★ ミス・反省の集約
@@ -94,6 +96,8 @@ claude-obsidian/
 | 特定プロジェクト | `02_Projects/該当ファイル` |
 | アプリURL確認 | `00_System/APP_LIST.md` |
 | ミス詳細確認 | `07_Mistakes/MISTAKES_LOG.md` |
+| 来週以降・中長期TODO | `06_Memory/TODO_BACKLOG.md` |
+| 学習計画・受験日程・診断結果 | `06_Memory/STUDY_PLAN.md` |
 
 ---
 
@@ -112,4 +116,4 @@ claude-obsidian/
 - `06_Memory/` の内容はAI非依存な「ogawa自身の情報」として設計済み
 
 ---
-最終更新：2026-05-30（01_Claude_Profile削除・指示書テンプレート→09_Templates・AI横断拡張メモ追加）
+最終更新：2026-05-30（CURRENT_STATUS分離：TODO_BACKLOG・STUDY_PLAN追加）
