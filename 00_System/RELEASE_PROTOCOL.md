@@ -38,34 +38,40 @@
 
 ## 🆕 新規リリース手順【GitHub Pages（localStorageアプリ）】
 
-> ✅ syarouで実績済みの確立手順（2026-05-25）
+> ✅ 確立手順。**リリース作業はClaude Codeで実施する運用**（2026-05-31更新）
 
 ### 事前準備（ogawaが実施）
-1. `C:\自作ツール\apl\アプリ名\` フォルダを作成し、HTMLファイルを置く
-2. GitHubに空リポジトリを作成（README・.gitignore・licenseは追加しない）
+1. GitHubに空リポジトリを作成（README・.gitignore・licenseは追加しない）
    → https://github.com/new
+2. GitHub Pages を有効化
+   - `https://github.com/tubakuro-sys/アプリ名/settings/pages` を開く
+   - Source: `Deploy from a branch`
+   - Branch: `main` / `/ (root)` → **Save**
 
-### Step 1：new_app.bat を実行（ogawaが実施）
-1. `C:\自作ツール\apl\new_app.bat` をダブルクリック
-2. アプリ名を入力（GitHubリポジトリ名と同じ）
-3. `y` で確認 → git init・deploy.yml生成・初回pushまで自動実行
+> ⚠️ **GitHub Pages設定（Step 2）はClaude Codeではできないため、必ずogawaが手動で実施する。**
+> ⚠️ この設定を忘れるとURLが404になる。必ずリリース前に実施すること。
 
-> ⚠️ GitHub Actionsのエラー（missing server host）は無視してOK。
-> deploy.ymlは将来のCloudflare Tunnel用。GitHub Pagesリリースには影響なし。
+### Step 1：Claude Codeでgit init〜push（Claude Codeが実施）
+Claude Codeに以下を指示する：
+```
+C:\自作ツール\apl\アプリ名\ をGitHubにプッシュして。
+リポジトリ名は アプリ名、ユーザーは tubakuro-sys、ブランチはmain。
+git init → add → commit → remote add → push の順で実行して。
+```
+> ⚠️ pushの途中でGitHubの認証が必要な場合は手動で入力する。
+> ⚠️ GitHub Actionsのエラー（missing server host）は無視してOK。deploy.ymlは将来のCloudflare Tunnel用。
 
-### Step 2：GitHub Pages を有効化（ogawaが実施）
-1. `https://github.com/tubakuro-sys/アプリ名/settings/pages` を開く
-2. Source: `Deploy from a branch`
-3. Branch: `main` / `/ (root)` → **Save**
-4. 数分後にアクセス確認：`https://tubakuro-sys.github.io/アプリ名/ファイル名.html`
-
-### Step 2.5：GitHub Pages有効化の完了確認（Claudeが必ず確認する）
-> ⚠️ ここをスキップしてStep 3に進まないこと。URLが404になる原因になる。
+### Step 2：GitHub Pages有効化の完了確認（Claudeが必ず確認する）
+> ⚠️ ここをスキップしてStep 3に進まないこと。URLが404になる原因になる（実績あり：toeic_vocab）
 - ogawaに「GitHub PagesのSource設定（mainブランチ）は完了しましたか？」と必ず確認する
 - 「完了した」の返答を受けてから初めてStep 3へ進む
 - 確認せずにリリース完了と記録することは禁止
 
-### Step 3：Obsidian記録（Claudeが実施）
+### Step 3：動作確認
+- 数分後にアクセス確認：`https://tubakuro-sys.github.io/アプリ名/ファイル名.html`
+- URLが開けることを確認してからStep 4へ進む
+
+### Step 4：Obsidian記録（Claudeが実施）
 - `APP_LIST.md` にアプリ情報を追記
 - `RELEASE_PROTOCOL.md` のアプリ別リリース状況テーブルを更新
 - `CURRENT_STATUS.md` のプロジェクト表と決定事項を更新
