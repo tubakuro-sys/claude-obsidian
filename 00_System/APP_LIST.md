@@ -10,6 +10,7 @@
 |---|---|---|---|---|---|---|
 | 1 | calorie_app | カロリー管理アプリ | [開く](https://tubakuro-sys.github.io/calorie_app/calorie_app.html) | GitHub Pages | 2026-05-23 | v10リリース済み |
 | 2 | syarou | 社労士学習アプリ | [開く](https://tubakuro-sys.github.io/syarou/syarou.html) | GitHub Pages | 2026-05-25 | v9リリース済み |
+| 3 | toeic_vocab | TOEIC英単語アプリ | [開く](https://tubakuro-sys.github.io/toeic_vocab/toeic_vocab.html) | GitHub Pages | 2026-05-30 | v1リリース済み |
 
 ---
 
@@ -40,6 +41,18 @@
 - **最終更新**：2026-05-26（v9リリース）
 - **v9の変更**：「➕ 問題追加」タブ。ClaudeにJSONで問題作成依頼→貼り付けるだけで追加
 
+### toeic_vocab
+- **概要**：TOEIC600点対策英単語アプリ（フラッシュカード＋4択）
+- **URL**：https://tubakuro-sys.github.io/toeic_vocab/toeic_vocab.html
+- **GitHubリポジトリ**：https://github.com/tubakuro-sys/toeic_vocab
+- **ローカルパス**：`C:\自作ツール\apl\toeic_vocab\`
+- **データ保存**：localStorage（復習リスト）
+- **対応デバイス**：スマホ・PC両対応
+- **リリース方法**：GitHub Pages
+- **公開日**：2026-05-30
+- **最終更新**：2026-05-30（v1初版リリース）
+- **v1の内容**：TOEIC頻出語約250語収録・フラッシュカード＋4択モード・カテゴリフィルター・復習リスト・ダークモード対応
+
 ---
 
 ## 🔮 課題・将来構想
@@ -49,4 +62,4 @@
 - **ステータス**：📋 アプリが増えたタイミングで着手
 
 ---
-最終更新：2026-05-26
+最終更新：2026-05-30
