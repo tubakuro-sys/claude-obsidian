@@ -59,6 +59,12 @@
 3. Branch: `main` / `/ (root)` → **Save**
 4. 数分後にアクセス確認：`https://tubakuro-sys.github.io/アプリ名/ファイル名.html`
 
+### Step 2.5：GitHub Pages有効化の完了確認（Claudeが必ず確認する）
+> ⚠️ ここをスキップしてStep 3に進まないこと。URLが404になる原因になる。
+- ogawaに「GitHub PagesのSource設定（mainブランチ）は完了しましたか？」と必ず確認する
+- 「完了した」の返答を受けてから初めてStep 3へ進む
+- 確認せずにリリース完了と記録することは禁止
+
 ### Step 3：Obsidian記録（Claudeが実施）
 - `APP_LIST.md` にアプリ情報を追記
 - `RELEASE_PROTOCOL.md` のアプリ別リリース状況テーブルを更新
