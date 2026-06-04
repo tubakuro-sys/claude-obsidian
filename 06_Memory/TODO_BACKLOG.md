@@ -5,22 +5,22 @@
 
 ---
 
-## 🗓 来週のTODO（6/2〜6/8）
+## 🗓 来週のTODO（6/8〜6/14）
 
+**ITパス合格後・開発再開**
 - [ ] 習慣トラッカー v1完成
 - [ ] ntfy通知サーバー構築（nas001 Docker）
 - [ ] TOEICアプリ改善（Part別分類）
+- [ ] 簿記アプリ：復習リスト機能追加
+
+**学習再開（ITパス合格後）**
+- [ ] 簿記3級・ TOEIC学習再開（30分ずつ/日）
+
+## 🗓 再来週のTODO（6/15〜6/21）
+
 - [ ] Grafanaダッシュボード（全端末状態可視化）
 - [ ] RSSニュースダイジェスト（Claude API×ntfy×cron）
 - [ ] 共通モジュール（Python）整備
-
-## 🗓 再来週のTODO（6/9〜6/15）
-
-- [ ] Home Assistant on Docker（nas001）
-- [ ] SwitchBot連携・オートメーション作成
-- [ ] Windowsデプロイ自動化スクリプト
-- [ ] Cloudflare Tunnel構築
-- [ ] Tailscale設定（外出先からnas001接続）
 
 ## 🗓 それ以降のTODO
 
@@ -32,6 +32,7 @@
 - [ ] 勉強アプリ：数学・計算アプリ作成
 - [ ] 勉強アプリ：応用情報アプリ作成（ITパス合格後）
 - [ ] 資格学習環境整備（ITパス合格後）：Claude Project＋Obsidian構成を資格ごとに構築（応用情報→簿記3級→TOEICの順）
+- [ ] AWS構築学習（ITパス合格後）：実際に構築しながら資格勉強も兼ねる。Cowork活用予定（CloudFormation/Terraform・IAM・VPC等）
 
 ---
 
