@@ -66,6 +66,7 @@ claude-obsidian/
 │   ├── CURRENT_STATUS.md           今週のTODO・進行中PJ・未完了依頼・直近決定事項
 │   ├── TODO_BACKLOG.md             来週以降・中長期TODOの全量管理
 │   ├── STUDY_PLAN.md               学習計画・受験日程・月次計画・診断結果
+│   ├── ITPASS_SYLLABUS.md          ITパスポート試験シラバス Ver.6.5 完全版
 │   └── INSIGHTS.md                 気づき・学びの蓄積
 │
 ├── 07_Mistakes/                    ★ ミス・反省の集約
@@ -98,6 +99,7 @@ claude-obsidian/
 | ミス詳細確認 | `07_Mistakes/MISTAKES_LOG.md` |
 | 来週以降・中長期TODO | `06_Memory/TODO_BACKLOG.md` |
 | 学習計画・受験日程・診断結果 | `06_Memory/STUDY_PLAN.md` |
+| ITパスポートシラバス参照 | `06_Memory/ITPASS_SYLLABUS.md` |
 
 ---
 
@@ -116,4 +118,4 @@ claude-obsidian/
 - `06_Memory/` の内容はAI非依存な「ogawa自身の情報」として設計済み
 
 ---
-最終更新：2026-05-30（CURRENT_STATUS分離：TODO_BACKLOG・STUDY_PLAN追加）
+最終更新：2026-06-07（ITPASS_SYLLABUS.md を06_Memory/ に追加）
