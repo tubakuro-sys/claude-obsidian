@@ -34,6 +34,10 @@ claude-obsidian/
 │   ├── 簿記3級_今日の問題.md        簿記3級クイズアプリ「今日の問題」
 │   ├── TOEIC_今日の問題.md          TOEIC L&R「今日の問題」
 │   ├── Claude資格学習支援AI.md      資格学習支援AIシステム
+│   ├── 家族共有アプリ/              家族とレシピ・タスク共有（Supabase+PWA・設計フェーズ）
+│   │   ├── README.md               プロジェクト概要・決定事項・やること
+│   │   ├── schema.sql              Supabase用テーブル定義＋RLS
+│   │   └── 手順書.md               実装・リリース手順書（Supabase版）
 │   └── PWAアプリ開発環境構築.md     PWA開発環境構築（完了）
 │
 ├── 03_Knowledge/                   ★ 永続知識・技術メモ
@@ -118,4 +122,4 @@ claude-obsidian/
 - `06_Memory/` の内容はAI非依存な「ogawa自身の情報」として設計済み
 
 ---
-最終更新：2026-06-07（ITPASS_SYLLABUS.md を06_Memory/ に追加）
+最終更新：2026-06-15（02_Projects/家族共有アプリ/ にREADME・schema.sql・手順書を整理）
