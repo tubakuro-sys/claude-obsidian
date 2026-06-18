@@ -26,7 +26,7 @@
 | 習慣トラッカー         | 📋 設計フェーズ              | v1実装開始          |
 | ntfy通知サーバー      | 📋 計画中                 | nas001にDocker導入 |
 | 家計簿ツール          | 📋 計画中                 | Tesseract OCR調査 |
-| 家族共有アプリ（レシピ・タスク） | 📋 設計フェーズ | Supabaseセットアップ＋schema.sql実行 |
+| 家族共有アプリ（レシピ・タスク） | 🔧 環境構築中 | Google認証設定（手順3/ブロックC）から再開 |
 
 ---
 
@@ -56,7 +56,13 @@
 
 ---
 
-## ⚡ 直近の決定事項（2026-06-15更新）
+## ⚡ 直近の決定事項（2026-06-16更新）
+
+- **2026-06-16：家族共有アプリ Supabase環境構築に着手（手順1、2完了）**
+  - 手順1：プロジェクト `family-app` 作成（Free / Tokyo）。Data API ON・expose new tables ON・auto RLS OFF。DBパスワードはogawa保管
+  - 手順2：`schema.sql` 実行成功（全テーブル＋RLS＋プロフィール自動作成トリガー＋my_family_id()）
+  - 次回：手順3（Google認証）ブロックCから。C-1=Sign In/Providers→GoogleでCallback URLコピー→Google CloudでOAuth client作成→Client ID/SecretをSupabaseに貼り有効化→URL Configuration
+  - 詳細手順は `04_Logs/Daily/2026-06-16.md` に記録
 
 - **2026-06-15：家族共有アプリ（レシピ・タスク）の技術方針決定**
   - 構成：データ=Supabase(PostgreSQL/SQL)、認証=Supabase Auth(Google)、配信=GitHub Pages、形態=PWA、コスト¥0
@@ -91,4 +97,4 @@
 - syarou v9：PDF取込タブ→「➕ 問題追加」タブに全面改修、APIキー不要・JSONペースト方式
 
 ---
-最終更新：2026-06-15
+最終更新：2026-06-16
