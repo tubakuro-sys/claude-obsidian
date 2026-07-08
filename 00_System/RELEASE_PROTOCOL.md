@@ -136,6 +136,7 @@ sudo nginx -t && sudo systemctl reload nginx
 | calorie_app | C:\自作ツール\apl\calorie | tubakuro-sys/calorie_app | https://tubakuro-sys.github.io/calorie_app/calorie_app.html | ✅ GitHub Pages公開済み（v10） |
 | syarou | C:\自作ツール\apl\syarou | tubakuro-sys/syarou | https://tubakuro-sys.github.io/syarou/syarou.html | ✅ GitHub Pages公開済み（v9） |
 | toeic_vocab | C:\自作ツール\apl\toeic_vocab | tubakuro-sys/toeic_vocab | https://tubakuro-sys.github.io/toeic_vocab/toeic_vocab.html | ✅ GitHub Pages公開済み（v1） |
+| loop-candy-puzzle | C:\自作ツール\apl\looppuzzle | tubakuro-sys/loop-candy-puzzle | https://tubakuro-sys.github.io/loop-candy-puzzle/ | ✅ GitHub Pages公開済み（v1） |
 
 ---
-最終更新：2026-05-30
+最終更新：2026-07-08

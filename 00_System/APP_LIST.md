@@ -11,6 +11,7 @@
 | 1 | calorie_app | カロリー管理アプリ | [開く](https://tubakuro-sys.github.io/calorie_app/calorie_app.html) | GitHub Pages | 2026-05-23 | v10リリース済み |
 | 2 | syarou | 社労士学習アプリ | [開く](https://tubakuro-sys.github.io/syarou/syarou.html) | GitHub Pages | 2026-05-25 | v9リリース済み |
 | 3 | toeic_vocab | TOEIC英単語アプリ | [開く](https://tubakuro-sys.github.io/toeic_vocab/toeic_vocab.html) | GitHub Pages | 2026-05-30 | v1リリース済み |
+| 4 | loop-candy-puzzle | ループを描いて消すキャンディパズルゲーム | [開く](https://tubakuro-sys.github.io/loop-candy-puzzle/) | GitHub Pages | 2026-07-08 | v1リリース済み |
 
 ---
 
@@ -53,6 +54,19 @@
 - **最終更新**：2026-05-30（v1初版リリース）
 - **v1の内容**：TOEIC頻出語約250語収録・フラッシュカード＋4択モード・カテゴリフィルター・復習リスト・ダークモード対応
 
+### loop-candy-puzzle
+- **概要**：同じ色のマスを斜めも含めてなぞりループ（輪っか）を作って消すパズルゲーム。制限時間60秒でハイスコアを競う
+- **URL**：https://tubakuro-sys.github.io/loop-candy-puzzle/
+- **GitHubリポジトリ**：https://github.com/tubakuro-sys/loop-candy-puzzle
+- **ローカルパス**：`C:\自作ツール\apl\looppuzzle\`
+- **データ保存**：localStorage（ハイスコアのみ）
+- **対応デバイス**：スマホ・PC両対応
+- **リリース方法**：GitHub Pages
+- **公開日**：2026-07-08
+- **最終更新**：2026-07-08（v1初版リリース。広告動画の自動再生・音声・パフォーマンスのバグ修正込み）
+- **広告機能**：ゲームオーバー後に動画広告（`AD_VIDEO_SOURCES`からランダム選択）を挟む仕組みを実装。音声あり自動再生→ブロック時ミュート→手動再生ボタンの3段フォールバック
+- **プロジェクトノート**：[[ループキャンディ]]
+
 ---
 
 ## 🔮 課題・将来構想
@@ -62,4 +76,4 @@
 - **ステータス**：📋 アプリが増えたタイミングで着手
 
 ---
-最終更新：2026-05-30
+最終更新：2026-07-08
