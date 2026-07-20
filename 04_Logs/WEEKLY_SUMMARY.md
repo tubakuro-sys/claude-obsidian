@@ -40,4 +40,44 @@
 - CBT再受験枠予約・過去問一問一答練習・弱点9項目再確認
 
 ---
-最終更新：2026-06-14（5/24週を週全体に拡充、5/31週・6/7週を追加）
+
+## 2026-06-14（週）6/14〜6/20
+
+### やったこと
+- **Obsidian環境メンテナンス**（依頼「obsidian整理して」）：4視点診断で問題なしを確認。週次サマリーの追いつき（5/24・5/31・6/7週）を実施
+- **家族共有アプリ（レシピ・タスク）を新規構想**：遠隔地の家族とデータ共有するPWA。データ共有手法を一通り比較し技術選定
+- **DB選定の転換（NoSQL→SQL）**：ogawaのOracle SQL業務経験を活かしSupabaseに決定。RLSで家族分離、写真はCloudflare R2（10GB無料）
+- **家族共有アプリフェーズ1：Supabase環境構築に着手**（手順1・2完了）。project作成（Free/Tokyo）、schema.sql実行成功（全テーブル＋RLS＋プロフィール自動作成トリガー）
+
+### 決定事項
+- 家族共有アプリ技術構成：データ=Supabase(PostgreSQL)、認証=Supabase Auth(Google)、配信=GitHub Pages、形態=PWA、コスト¥0
+- 1プロジェクトに複数アプリ同居＋family_idで家族ごとにRLS分離。実装はClaude Code（Sonnet主力・難所Opus）
+- 週次サマリーは日曜起算・直近4週保持
+
+### 残タスク（次回ここから）
+- 手順3（Google認証）ブロックCから：Callback URLコピー→Google CloudでOAuth client作成→Client ID/SecretをSupabaseに貼り有効化→URL Configuration
+
+---
+
+## 2026-07-08（週）7/5〜7/11
+
+### やったこと
+- **ループキャンディ（Loop Candy Puzzle）GitHub公開**：gh CLI・ffmpegをwinget導入、リポジトリ作成・Pages有効化。公開URL：https://tubakuro-sys.github.io/loop-candy-puzzle/
+- push.bat（add→commit→pushの1クリック化）作成。日本語＋chcp 65001で文字化け→英語表記に変更し解決
+- 広告動画の不具合修正：固定ファイル名不一致→ランダム再生化、音声自動再生（3段フォールバック）、再生ラグ（720p/低ビットレート再エンコード＋広告中はCanvas描画停止）を修正
+
+- **Frostlight（凍てつく灯火）新規プロトタイプ完成**（ターン制都市経営・単一HTML・70日/4章/難易度4段階）。重大バグ修正（探索隊が帰らない=添字ズレ→固有ID、セーブ不可=window.storage.getの例外握りつぶし、モーダル中セーブの破損）
+
+### 決定事項
+- Frostlight：**エンジン移植はしない**（HTML/CSS/JSのまま→配布はTauriでラップ）。9割がUIなのでHTMLが最速。弱点（経済の嘘・選択の浅さ）はエンジンを変えても直らない
+- Frostlight方針：①経済の嘘を消す→②手触り（音→間→絵）→③Tauriで包む。第一段階では絵も音も追加せず灰色の四角のまま面白いか判定
+- Unity Personalは20万USD未満なら無料（Runtime Fee撤回済）。Godotは完全無料・2D/UI得意（将来の選択肢）
+
+### ミス
+- 「少し時間ください」と返した→Claudeは返信後にバックグラウンド作業できない。人間の会話の型に合わせた虚偽の報告。MISTAKESに記録
+
+### 残タスク
+- Frostlight第一段階：リングの断熱をその環に住む者だけに効かせる
+
+---
+最終更新：2026-07-20（5/24週を月次（5月）へ退避、6/14週・7/5週を追加）
